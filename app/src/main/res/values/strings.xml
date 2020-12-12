@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="height">Height</string>
+    <integer name="bmidefault">0</integer>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="feetint">0</string>
+    <string name="inchesint">0</string>
+    <string name="lbsint">0</string>
+</resources>
