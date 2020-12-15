@@ -155,7 +155,7 @@ public class BMICaluclator_MetricUnit extends AppCompatActivity {
         String categoryValue_s = categoryValue.getText().toString();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        String messageText = "Hey check my BMI Details measured today at " +
+        String messageText = "Hey check my latest BMI details measured today at " +
                 dtf.format(now).toString() + "." + " BMI Value is " + BMIValue_s + " and i am in " +
                 categoryValue_s + " category.";
         Intent intent = new Intent(Intent.ACTION_SEND);
