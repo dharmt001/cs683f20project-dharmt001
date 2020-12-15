@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".BMICaluclator_MetricUnit">
 
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:id="@+id/heightString"
         android:layout_width="wrap_content"
@@ -29,6 +33,7 @@
         android:layout_marginBottom="510dp"
         android:ems="2"
         android:hint="@string/inchesint"
+        android:text="0"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/heightString"
@@ -68,10 +73,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"
         android:layout_marginTop="36dp"
-        android:onClick="BMIFormulaMetric"
-        android:ems="2"
+        android:ems="3"
         android:hint="0"
-        android:inputType="number"
+        android:text="0"
+        android:inputType="numberDecimal"
+        android:onClick="BMIFormulaMetric"
         app:layout_constraintStart_toEndOf="@+id/weightString"
         app:layout_constraintTop_toBottomOf="@+id/cm_value" />
 
@@ -106,7 +112,7 @@
         android:layout_marginTop="285dp"
         android:layout_marginEnd="210dp"
         android:ems="2"
-        android:text="0"
+        android:hint="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,4 +146,60 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/CategoryString" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/userNameEdit"
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="96dp"
+        android:hint="Alphabets only"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userNameText" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="saveinDB"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="108dp"
+        android:text="User Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/kgsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="63dp"
+        android:text="Kgs"
+        app:layout_constraintStart_toEndOf="@+id/kgsValue"
+        app:layout_constraintTop_toBottomOf="@+id/cmString" />
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="8dp"
+        android:text="SHARE"
+        android:onClick="shareBMI_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
